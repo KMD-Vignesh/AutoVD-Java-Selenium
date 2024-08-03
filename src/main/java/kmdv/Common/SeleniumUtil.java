@@ -1917,6 +1917,7 @@ public class SeleniumUtil {
 		return intArray;
 	}
 
+	@SuppressWarnings("deprecation")
 	public int getRandom(int min, int max) {
 		return RandomUtils.nextInt(min, max + 1);
 	}
