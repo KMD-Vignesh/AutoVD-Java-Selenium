@@ -8,7 +8,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Reporter;
@@ -32,9 +31,9 @@ public class DriverConfig extends BaseUtil {
 				  case "edge" :dov = new EdgeDriver();break;
 				  case "safari" :dov = new SafariDriver();break;
 				  case "firefoxheadless" :FirefoxOptions firefoxOptions = new FirefoxOptions();firefoxOptions.addArguments("-headless");dov = new FirefoxDriver(firefoxOptions);break;
-				  case "chromeheadless" :ChromeOptions chromeOptions = new ChromeOptions();chromeOptions.addArguments("--headless=new");dov = new ChromeDriver(chromeOptions);break;
-				  default:System.out.println("Update Proper BrowserName in File");
-				  }}
+case "chromeheadless" :ChromeOptions chromeOptions = new ChromeOptions();chromeOptions.addArguments("--headless=new");dov = new ChromeDriver(chromeOptions);break;
+			  default: throw new IllegalArgumentException("Update Proper BrowserName in File : " + BrowserName);
+			  }}
 			return dov;
 		}
 	};
@@ -44,7 +43,10 @@ public class DriverConfig extends BaseUtil {
 	}
 
 	public void quitDriver() {
-		getDriver().quit();
+		WebDriver driver = weDriver.get();
+		if (driver != null) {
+			driver.quit();
+		}
 		weDriver.remove();
 	}
 
@@ -55,14 +57,14 @@ public class DriverConfig extends BaseUtil {
 		  final String URL = "https://" + USERNAME + ":" + ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
 		  RemoteWebDriver remoteWebDriver = null;
 
-		  DesiredCapabilities caps = new DesiredCapabilities();
-		    caps.setCapability("os", propertiesUtil.getValue("os"));
-		    caps.setCapability("os_version", propertiesUtil.getValue("os_version"));
-		    caps.setCapability("browser", propertiesUtil.getValue("browser"));
-		    caps.setCapability("browser_version", propertiesUtil.getValue("browser_version"));
-		    caps.setCapability("resolution", "1920x1080");
-		    caps.setCapability("name", Reporter.getCurrentTestResult().getName()); 
-		    caps.setCapability("build", Reporter.getCurrentTestResult().getTestClass().getName()); 
+ChromeOptions caps = new ChromeOptions();
+	    caps.setCapability("os", propertiesUtil.getValue("os"));
+	    caps.setCapability("os_version", propertiesUtil.getValue("os_version"));
+	    caps.setCapability("browser", propertiesUtil.getValue("browser"));
+	    caps.setCapability("browser_version", propertiesUtil.getValue("browser_version"));
+	    caps.setCapability("resolution", "1920x1080");
+	    caps.setCapability("name", Reporter.getCurrentTestResult().getName());
+	    caps.setCapability("build", Reporter.getCurrentTestResult().getTestClass().getName());
 		    try {
 			remoteWebDriver = new RemoteWebDriver(new URL(URL), caps);
 			} catch (Exception e) {
