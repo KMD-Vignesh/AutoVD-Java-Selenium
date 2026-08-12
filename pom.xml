@@ -78,6 +78,19 @@
             <artifactId>rest-assured</artifactId>
             <version>5.5.0</version>
         </dependency>
-
+        <!-- SLF4J binding to resolve "Failed to load class StaticLoggerBinder" warning -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.36</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Log4j2 core to resolve "could not find a logging implementation" warning -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.23.1</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 </project>
