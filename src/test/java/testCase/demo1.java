@@ -27,7 +27,6 @@ public class demo1 extends TestBase {
 		check_Cart_item_count = HomePage.AddProduct("Sauce Labs Backpack").Check_Cart_item_count();
 		selenium.Log(selenium.IntToString(check_Cart_item_count));
 		selenium.pageScreenShot();
-		Assert.assertTrue(true);
 
 	}
 	
@@ -45,7 +44,7 @@ public class demo1 extends TestBase {
 
 		check_Cart_item_count = HomePage.AddProduct("Sauce Labs Onesie").Check_Cart_item_count();
 		selenium.Log(selenium.IntToString(check_Cart_item_count));
-		Assert.assertTrue(true);
+		Assert.assertEquals(check_Cart_item_count, 2);
 
 	}
 	
