@@ -68,25 +68,31 @@ public class ClassConfig extends BaseUtil {
 		}
 		++counterExcel;
 		if (result.getStatus() == ITestResult.SUCCESS) {
-			if(BrowserStack.equalsIgnoreCase("on")) {
+			if(BrowserStack.equalsIgnoreCase("on") && Selenium.get() != null) {
 				markTestStatus("passed", "Passed : "+result.getName(), Selenium.get().getDriver());
 			}
 			
 		} else if (result.getStatus() == ITestResult.FAILURE) {
-			screenShot.ExtentFailShot(Selenium.get().getDriver(), result, Extent.getTestThread());
+			if (Selenium.get() != null && Selenium.get().getDriver() != null) {
+				screenShot.ExtentFailShot(Selenium.get().getDriver(), result, Extent.getTestThread());
+			}
 			if(BrowserStack.equalsIgnoreCase("on")) {
 				markTestStatus("failed", "Failed : "+result.getThrowable(), Selenium.get().getDriver());
 			}
 			
 		} else if (result.getStatus() == ITestResult.SKIP) {
-			screenShot.ExtentSkipShot(Selenium.get().getDriver(), result, Extent.getTestThread());
+			if (Selenium.get() != null && Selenium.get().getDriver() != null) {
+				screenShot.ExtentSkipShot(Selenium.get().getDriver(), result, Extent.getTestThread());
+			}
 			if(BrowserStack.equalsIgnoreCase("on")) {
 				markTestStatus("failed", "Skipped : "+result.getThrowable(), Selenium.get().getDriver());
 			}
 		}
 
 		if (testType.equalsIgnoreCase("Selenium")) {
-			Driver.quitDriver();
+			if (Driver.get() != null) {
+				Driver.get().quitDriver();
+			}
 			Selenium.remove();
 			Extent.removeThread();
 		} else if (testType.equalsIgnoreCase("RestAPI")) {
