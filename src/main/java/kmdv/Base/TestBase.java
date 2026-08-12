@@ -57,13 +57,3 @@ public class TestBase extends BaseUtil {
 	}
 
 }
-
-
-//ScreenRecorderUtil videoRecorder = new ScreenRecorderUtil(selenium.getDriver());
-//videoRecorder.setRecorder(videoRecorder);
-//videoRecorder.getRecorder().startRecording("articleSearch");
-//try {
-//	videoRecorder.getRecorder().stopRecording();
-//} catch (InterruptedException e) {
-//	e.printStackTrace();
-//}
