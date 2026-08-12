@@ -6,10 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.ss.usermodel.FillPatternType;
-import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -25,7 +22,6 @@ public class ExcelUtil extends BaseUtil {
 	private XSSFSheet xsheet;
 	private XSSFRow xrow;
 	private XSSFCell xcell;
-	private CellStyle xstyle;
 	private String excelPath;
 
 	public ExcelUtil(String excelPath) {
@@ -62,25 +58,6 @@ public class ExcelUtil extends BaseUtil {
 
 		}
 		return XLData;
-	}
-
-	public int[] getRowColNumbers(String sheetName, String Value) {
-
-		int totalrows = getRowCount(sheetName);
-		int totalcols = getCellCount(sheetName, 1);
-
-		int[] intcol = new int[2];
-		for (int i = 0; i <= totalrows; i++) {
-			for (int j = 0; j < totalcols; j++) {
-				if (getCellDataByNum(sheetName, i, j).equals(Value)) {
-					intcol[0] = i;
-					intcol[1] = j;
-				}
-
-			}
-
-		}
-		return intcol;
 	}
 
 	public int getRowNumber(String sheetName, String Value) {
@@ -183,49 +160,6 @@ public class ExcelUtil extends BaseUtil {
 			fout = new FileOutputStream(excelPath);
 			xbook.write(fout);
 		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		xbookClose();
-		finClose();
-		foutClose();
-	}
-
-	public void fillGreenColor(String sheetName, int rownum, int colnum) {
-		xsheet = xbook.getSheet(sheetName);
-
-		xrow = xsheet.getRow(rownum);
-		xcell = xrow.getCell(colnum);
-
-		xstyle = xbook.createCellStyle();
-
-		xstyle.setFillForegroundColor(IndexedColors.GREEN.getIndex());
-		xstyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
-
-		xcell.setCellStyle(xstyle);
-		try {
-			xbook.write(fout);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		xbookClose();
-		finClose();
-		foutClose();
-	}
-
-	public void fillRedColor(String sheetName, int rownum, int colnum) {
-		xsheet = xbook.getSheet(sheetName);
-		xrow = xsheet.getRow(rownum);
-		xcell = xrow.getCell(colnum);
-
-		xstyle = xbook.createCellStyle();
-
-		xstyle.setFillForegroundColor(IndexedColors.RED.getIndex());
-		xstyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
-
-		xcell.setCellStyle(xstyle);
-		try {
-			xbook.write(fout);
-		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		xbookClose();
