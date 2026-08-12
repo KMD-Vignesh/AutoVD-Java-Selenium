@@ -18,7 +18,7 @@ public class BaseUtil {
 	protected static ClassConfig classInit;
 	protected static PathConfig pathRoot;
 	protected static ExtentReportManger Extent;
-	protected static DriverConfig Driver;
+	protected static ThreadLocal<DriverConfig> Driver = new ThreadLocal<DriverConfig>();
 	protected static ScreenShot screenShot;
 	protected static String BrowserName;
 	protected static String BrowserStack;
@@ -31,8 +31,8 @@ public class BaseUtil {
 	protected static SeleniumUtil Selenium(String webURL) {
 		Extent.StartExtentTest(getInfo(Reporter.getCurrentTestResult()));
 		testType.set("Selenium");
-		Driver = new DriverConfig();
-		Selenium.set(new SeleniumUtil(Driver.getDriver(), Extent.getTestThread(), BrowserName, webURL, waitTime));
+		Driver.set(new DriverConfig());
+		Selenium.set(new SeleniumUtil(Driver.get().getDriver(), Extent.getTestThread(), BrowserName, webURL, waitTime));
 		return Selenium.get();
 	}
 
