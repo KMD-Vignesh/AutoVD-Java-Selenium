@@ -35,7 +35,14 @@ public class LocatorsUtil extends BaseUtil {
 		}
 		
 		for (Map.Entry<Object, Object> entry : loc.entrySet()) {
-			String[] locators = entry.getKey().toString().split("_");
+			String key = entry.getKey().toString();
+			if (key.startsWith("#") || key.isEmpty()) {
+				continue;
+			}
+			String[] locators = key.split("_");
+			if (locators.length < 2) {
+				continue;
+			}
 			
 			switch (locators[1].toLowerCase()) {
 				
