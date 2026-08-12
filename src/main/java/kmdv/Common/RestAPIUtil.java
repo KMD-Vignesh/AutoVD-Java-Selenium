@@ -24,7 +24,7 @@ public class RestAPIUtil {
 
 	public void Log(Object stringMessage) {
 		System.out.println(stringMessage);
-		Etest.pass(stringMessage.toString());
+		Etest.info(stringMessage.toString());
 		Reporter.log(stringMessage.toString());
 	}
 
@@ -33,59 +33,48 @@ public class RestAPIUtil {
 	}
 
 	public void logE(Object message) {
-		Etest.pass(message.toString());
+		Etest.info(message.toString());
 	}
 
 
 	public String IntToString(int value) {
-		return Integer.toString(value);
+		return GeneralUtil.IntToString(value);
 	}
 
 	public int StringToInt(String value) {
-		return Integer.parseInt(value);
+		return GeneralUtil.StringToInt(value);
 	}
 
 	public boolean StringEquals(String value1, String value2) {
-		return value1.equalsIgnoreCase(value2);
+		return GeneralUtil.StringEquals(value1, value2);
 	}
 
 	public LocalDate Today() {
-		return LocalDate.now();
+		return GeneralUtil.Today();
 	}
 
 	public LocalDate Yesterday() {
-		return LocalDate.now().minusDays(1);
+		return GeneralUtil.Yesterday();
 	}
 
 	public LocalDate Tomorrow() {
-		return LocalDate.now().plusDays(2);
+		return GeneralUtil.Tomorrow();
 	}
 
 	public LocalDate localDate(int Year, int Month, int day) {
-		return LocalDate.of(Year, Month, day);
+		return GeneralUtil.localDate(Year, Month, day);
 	}
 
 	public String[] toCharArray(String StringArray) {
-		char[] charArray = StringArray.toCharArray();
-		String[] stringArray = new String[charArray.length];
-		for (int i = 0; i < charArray.length; i++) {
-			stringArray[i] = String.valueOf(charArray[i]);
-		}
-		return stringArray;
+		return GeneralUtil.toCharArray(StringArray);
 	}
 
 	public int[] toCharArray(int IntArray) {
-		String StringInt = Integer.toString(IntArray);
-		char[] charArray = StringInt.toCharArray();
-		int[] intArray = new int[charArray.length];
-		for (int i = 0; i < charArray.length; i++) {
-			intArray[i] = Integer.parseInt(String.valueOf(charArray[i]));
-		}
-		return intArray;
+		return GeneralUtil.toCharArray(IntArray);
 	}
 
 	public int getRandom(int min, int max) {
-		return (int) (Math.random() * (max - min + 1) + min);
+		return GeneralUtil.getRandom(min, max);
 	}
 
 	public int getStatusCode(String getURI) {
