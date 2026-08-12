@@ -8,12 +8,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.lang3.RandomUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -92,11 +90,11 @@ public class SeleniumUtil {
 	}
 
 	public void logExtent(Object logMessage) {
-		Etest.pass(logMessage.toString());
+		Etest.info(logMessage.toString());
 	}
 
 	public void logExtent(Object[] logMessage) {
-		Etest.pass(Arrays.toString(logMessage));
+		Etest.info(Arrays.toString(logMessage));
 	}
 
 	public void logList(List<WebElement> ListWebelement) {
@@ -208,17 +206,16 @@ public class SeleniumUtil {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
-				if (js.executeScript("return document.readyState").toString().contains("active")
-						|| js.executeScript("return document.readyState").toString().equals("complete")) {
+				if (js.executeScript("return document.readyState").toString().equals("complete")) {
 					flag = true;
 					break;
 				} else {
-					sleepMilliSeconds(1);
+					sleepMilliSeconds(250);
 				}
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		Assert.assertTrue(flag);
@@ -229,13 +226,13 @@ public class SeleniumUtil {
 	public Boolean switchTab(String tab) {
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				driver.switchTo().window(tab);
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		Assert.assertTrue(flag);
@@ -248,13 +245,13 @@ public class SeleniumUtil {
 		defaultFrame();
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				driver.switchTo().frame(frameName);
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		Assert.assertTrue(flag);
@@ -267,13 +264,13 @@ public class SeleniumUtil {
 		defaultFrame();
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				driver.switchTo().frame(frameIndex);
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		Assert.assertTrue(flag);
@@ -297,13 +294,13 @@ public class SeleniumUtil {
 		WebElement findElement = null;
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				findElement = driver.findElement(by);
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		if (!flag) {
@@ -317,13 +314,13 @@ public class SeleniumUtil {
 		List<WebElement> findElements = null;
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				findElements = driver.findElements(by);
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		if (!flag) {
@@ -505,12 +502,12 @@ public class SeleniumUtil {
 
 	public Boolean waitDisplayed(WebElement ele) {
 		Boolean flag = false;
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			if (isDisplayed(ele)) {
 				flag = true;
 				break;
 			} else {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		if (!flag) {
@@ -522,12 +519,12 @@ public class SeleniumUtil {
 
 	public Boolean waitDisplayed(By by) {
 		Boolean flag = false;
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			if (isDisplayed(by)) {
 				flag = true;
 				break;
 			} else {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		if (!flag) {
@@ -539,12 +536,12 @@ public class SeleniumUtil {
 
 	public Boolean waitEnabled(WebElement ele) {
 		Boolean flag = false;
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			if (isEnabled(ele)) {
 				flag = true;
 				break;
 			} else {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		if (!flag) {
@@ -556,12 +553,12 @@ public class SeleniumUtil {
 
 	public Boolean waitEnabled(By by) {
 		Boolean flag = false;
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			if (isEnabled(by)) {
 				flag = true;
 				break;
 			} else {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		if (!flag) {
@@ -573,12 +570,12 @@ public class SeleniumUtil {
 
 	public Boolean waitSelected(WebElement ele) {
 		Boolean flag = false;
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			if (isSelected(ele)) {
 				flag = true;
 				break;
 			} else {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		if (!flag) {
@@ -590,12 +587,12 @@ public class SeleniumUtil {
 
 	public Boolean waitSelected(By by) {
 		Boolean flag = false;
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			if (isSelected(by)) {
 				flag = true;
 				break;
 			} else {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		if (!flag) {
@@ -614,13 +611,13 @@ public class SeleniumUtil {
 		String getText = null;
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				getText = ele.getText();
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 				ele = refreshElement(ele);
 			}
 		}
@@ -639,13 +636,13 @@ public class SeleniumUtil {
 		String attribute = null;
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				attribute = ele.getAttribute(AttributeName);
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 				ele = refreshElement(ele);
 			}
 		}
@@ -663,13 +660,13 @@ public class SeleniumUtil {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				js.executeScript("arguments[0].setAttribute(arguments[1], arguments[2]);", ele, Attribute, Value);
 				flag = getAttribute(ele,Attribute).equalsIgnoreCase(Value);
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		Assert.assertTrue(flag);
@@ -682,13 +679,13 @@ public class SeleniumUtil {
 		Point getLocation = null;
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				getLocation = ele.getLocation();
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 				ele = refreshElement(ele);
 			}
 		}
@@ -705,13 +702,13 @@ public class SeleniumUtil {
 	public Boolean click(WebElement ele) {
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				ele.click();
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 				ele = refreshElement(ele);
 			}
 		}
@@ -745,13 +742,13 @@ public class SeleniumUtil {
 	public Boolean clear(WebElement ele) {
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				ele.clear();
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 				ele = refreshElement(ele);
 			}
 		}
@@ -767,13 +764,13 @@ public class SeleniumUtil {
 	public Boolean type(WebElement ele, Object Value) {
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				ele.sendKeys(Value.toString());
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 				ele = refreshElement(ele);
 			}
 		}
@@ -871,13 +868,13 @@ public class SeleniumUtil {
 		Alert alert = null;
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				alert = driver.switchTo().alert();
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		Assert.assertTrue(flag);
@@ -904,13 +901,13 @@ public class SeleniumUtil {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				js.executeScript("arguments[0].click();", ele);
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 				ele = refreshElement(ele);
 			}
 		}
@@ -928,13 +925,13 @@ public class SeleniumUtil {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				js.executeScript("arguments[0].value='" + Value.toString() + "';", ele);
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 				ele = refreshElement(ele);
 			}
 		}
@@ -952,13 +949,13 @@ public class SeleniumUtil {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				js.executeScript(Script);
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		Assert.assertTrue(flag);
@@ -970,13 +967,13 @@ public class SeleniumUtil {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				js.executeScript(Script, ele);
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		Assert.assertTrue(flag);
@@ -988,13 +985,13 @@ public class SeleniumUtil {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				js.executeScript("arguments[0].scrollIntoView();", ele);
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 				ele = refreshElement(ele);
 			}
 		}
@@ -1011,7 +1008,7 @@ public class SeleniumUtil {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				for (int j = 1; j <= y; j += 6) {
 					js.executeScript("window.scrollTo(" + x + "," + j + ")");
@@ -1019,7 +1016,7 @@ public class SeleniumUtil {
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		Assert.assertTrue(flag);
@@ -1046,7 +1043,7 @@ public class SeleniumUtil {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				for (int j = 1; j <= y; j += 6) {
 					js.executeScript("window.scrollBy(" + x + "," + j + ")");
@@ -1054,7 +1051,7 @@ public class SeleniumUtil {
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		Assert.assertTrue(flag);
@@ -1080,14 +1077,14 @@ public class SeleniumUtil {
 	public Boolean selectDropDown(WebElement ele, String VisibleText) {
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				Select sel = new Select(ele);
 				sel.selectByVisibleText(VisibleText);
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 				ele = refreshElement(ele);
 			}
 		}
@@ -1104,14 +1101,14 @@ public class SeleniumUtil {
 		String getFirstSelectedOption = null;
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				Select sel = new Select(ele);
 				getFirstSelectedOption = sel.getFirstSelectedOption().toString();
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 				ele = refreshElement(ele);
 			}
 		}
@@ -1138,13 +1135,13 @@ public class SeleniumUtil {
 		Actions actions = new Actions(driver);
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				actions.moveToElement(ele).perform();
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 				ele = refreshElement(ele);
 			}
 		}
@@ -1163,13 +1160,13 @@ public class SeleniumUtil {
 		Actions actions = new Actions(driver);
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				actions.contextClick(ele).perform();
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 				ele = refreshElement(ele);
 			}
 		}
@@ -1187,13 +1184,13 @@ public class SeleniumUtil {
 		Actions actions = new Actions(driver);
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				actions.contextClick().perform();
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		Assert.assertTrue(flag);
@@ -1205,13 +1202,13 @@ public class SeleniumUtil {
 		Actions actions = new Actions(driver);
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				actions.doubleClick(ele).perform();
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 				ele = refreshElement(ele);
 			}
 		}
@@ -1229,13 +1226,13 @@ public class SeleniumUtil {
 		Actions actions = new Actions(driver);
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				actions.doubleClick().perform();
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		Assert.assertTrue(flag);
@@ -1247,13 +1244,13 @@ public class SeleniumUtil {
 		Actions actions = new Actions(driver);
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				actions.dragAndDrop(source, target).perform();
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 				source = refreshElement(source);
 				target = refreshElement(target);
 
@@ -1274,13 +1271,13 @@ public class SeleniumUtil {
 		Actions actions = new Actions(driver);
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				actions.click(ele).perform();
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 				ele = refreshElement(ele);
 			}
 		}
@@ -1299,13 +1296,13 @@ public class SeleniumUtil {
 		Actions actions = new Actions(driver);
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				actions.click().perform();
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		Assert.assertTrue(flag);
@@ -1317,13 +1314,13 @@ public class SeleniumUtil {
 		Actions actions = new Actions(driver);
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				actions.sendKeys(ele, Value.toString()).perform();
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 				ele = refreshElement(ele);
 			}
 		}
@@ -1342,13 +1339,13 @@ public class SeleniumUtil {
 		Actions actions = new Actions(driver);
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				actions.sendKeys(Value.toString()).perform();
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		Assert.assertTrue(flag);
@@ -1360,13 +1357,13 @@ public class SeleniumUtil {
 		Actions actions = new Actions(driver);
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				actions.sendKeys(Keys.ENTER).perform();
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		Assert.assertTrue(flag);
@@ -1378,13 +1375,13 @@ public class SeleniumUtil {
 		Actions actions = new Actions(driver);
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				actions.sendKeys(Keys.ESCAPE).perform();
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		Assert.assertTrue(flag);
@@ -1396,13 +1393,13 @@ public class SeleniumUtil {
 		Actions actions = new Actions(driver);
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				actions.sendKeys(Keys.RETURN).perform();
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		Assert.assertTrue(flag);
@@ -1414,13 +1411,13 @@ public class SeleniumUtil {
 		Actions actions = new Actions(driver);
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				actions.sendKeys(Keys.TAB).perform();
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 		Assert.assertTrue(flag);
@@ -1434,13 +1431,13 @@ public class SeleniumUtil {
 		for (int value = 0; value < count; value++) {
 			Actions actions = new Actions(driver);
 
-			for (int i = 1; i <= waitTime * 1000; i++) {
+			for (int i = 1; i <= waitTime * 4; i++) {
 				try {
 					actions.sendKeys(Keys.ARROW_DOWN).perform();
 					flag = true;
 					break;
 				} catch (Exception e) {
-					sleepMilliSeconds(1);
+					sleepMilliSeconds(250);
 				}
 			}
 
@@ -1457,13 +1454,13 @@ public class SeleniumUtil {
 		for (int value = 0; value < count; value++) {
 			Actions actions = new Actions(driver);
 
-			for (int i = 1; i <= waitTime * 1000; i++) {
+			for (int i = 1; i <= waitTime * 4; i++) {
 				try {
 					actions.sendKeys(Keys.ARROW_UP).perform();
 					flag = true;
 					break;
 				} catch (Exception e) {
-					sleepMilliSeconds(1);
+					sleepMilliSeconds(250);
 				}
 			}
 
@@ -1481,13 +1478,13 @@ public class SeleniumUtil {
 		for (int value = 0; value < count; value++) {
 			Actions actions = new Actions(driver);
 
-			for (int i = 1; i <= waitTime * 1000; i++) {
+			for (int i = 1; i <= waitTime * 4; i++) {
 				try {
 					actions.sendKeys(Keys.ARROW_RIGHT).perform();
 					flag = true;
 					break;
 				} catch (Exception e) {
-					sleepMilliSeconds(1);
+					sleepMilliSeconds(250);
 				}
 			}
 
@@ -1504,13 +1501,13 @@ public class SeleniumUtil {
 		for (int value = 0; value < count; value++) {
 			Actions actions = new Actions(driver);
 
-			for (int i = 1; i <= waitTime * 1000; i++) {
+			for (int i = 1; i <= waitTime * 4; i++) {
 				try {
 					actions.sendKeys(Keys.ARROW_LEFT).perform();
 					flag = true;
 					break;
 				} catch (Exception e) {
-					sleepMilliSeconds(1);
+					sleepMilliSeconds(250);
 				}
 			}
 
@@ -1520,12 +1517,13 @@ public class SeleniumUtil {
 		return flag;
 	}
 
+	// Robot helpers need a real desktop + grab OS focus; fail in headless/CI — use Actions/sendKeys equivalents where possible.
 	public Boolean robotDOWN(int count) {
 		Boolean flag = false;
 
 		for (int value = 0; value < count; value++) {
 
-			for (int i = 1; i <= waitTime * 1000; i++) {
+			for (int i = 1; i <= waitTime * 4; i++) {
 				try {
 					Robot robot = new Robot();
 					robot.keyPress(KeyEvent.VK_DOWN);
@@ -1533,7 +1531,7 @@ public class SeleniumUtil {
 					flag = true;
 					break;
 				} catch (Exception e) {
-					sleepMilliSeconds(1);
+					sleepMilliSeconds(250);
 				}
 			}
 
@@ -1548,7 +1546,7 @@ public class SeleniumUtil {
 
 		for (int value = 0; value < count; value++) {
 
-			for (int i = 1; i <= waitTime * 1000; i++) {
+			for (int i = 1; i <= waitTime * 4; i++) {
 				try {
 					Robot robot = new Robot();
 					robot.keyPress(KeyEvent.VK_UP);
@@ -1556,7 +1554,7 @@ public class SeleniumUtil {
 					flag = true;
 					break;
 				} catch (Exception e) {
-					sleepMilliSeconds(1);
+					sleepMilliSeconds(250);
 				}
 			}
 
@@ -1571,7 +1569,7 @@ public class SeleniumUtil {
 
 		for (int value = 0; value < count; value++) {
 
-			for (int i = 1; i <= waitTime * 1000; i++) {
+			for (int i = 1; i <= waitTime * 4; i++) {
 				try {
 					Robot robot = new Robot();
 					robot.keyPress(KeyEvent.VK_RIGHT);
@@ -1579,7 +1577,7 @@ public class SeleniumUtil {
 					flag = true;
 					break;
 				} catch (Exception e) {
-					sleepMilliSeconds(1);
+					sleepMilliSeconds(250);
 				}
 			}
 
@@ -1594,7 +1592,7 @@ public class SeleniumUtil {
 
 		for (int value = 0; value < count; value++) {
 
-			for (int i = 1; i <= waitTime * 1000; i++) {
+			for (int i = 1; i <= waitTime * 4; i++) {
 				try {
 					Robot robot = new Robot();
 					robot.keyPress(KeyEvent.VK_LEFT);
@@ -1602,7 +1600,7 @@ public class SeleniumUtil {
 					flag = true;
 					break;
 				} catch (Exception e) {
-					sleepMilliSeconds(1);
+					sleepMilliSeconds(250);
 				}
 			}
 
@@ -1616,7 +1614,7 @@ public class SeleniumUtil {
 
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				Robot robot = new Robot();
 				robot.keyPress(KeyEvent.VK_ENTER);
@@ -1624,7 +1622,7 @@ public class SeleniumUtil {
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 
@@ -1637,7 +1635,7 @@ public class SeleniumUtil {
 
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				Robot robot = new Robot();
 				robot.keyPress(KeyEvent.VK_TAB);
@@ -1645,7 +1643,7 @@ public class SeleniumUtil {
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 
@@ -1658,7 +1656,7 @@ public class SeleniumUtil {
 
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				Robot robot = new Robot();
 				robot.keyPress(KeyEvent.VK_ESCAPE);
@@ -1666,7 +1664,7 @@ public class SeleniumUtil {
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 
@@ -1679,7 +1677,7 @@ public class SeleniumUtil {
 
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				Robot robot = new Robot();
 				robot.keyPress(KeyEvent.VK_BACK_SPACE);
@@ -1687,7 +1685,7 @@ public class SeleniumUtil {
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 
@@ -1700,7 +1698,7 @@ public class SeleniumUtil {
 
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				Robot robot = new Robot();
 				robot.keyPress(KeyEvent.VK_CONTROL);
@@ -1710,7 +1708,7 @@ public class SeleniumUtil {
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 
@@ -1723,7 +1721,7 @@ public class SeleniumUtil {
 
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				Robot robot = new Robot();
 				robot.keyPress(KeyEvent.VK_CONTROL);
@@ -1733,7 +1731,7 @@ public class SeleniumUtil {
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 
@@ -1746,7 +1744,7 @@ public class SeleniumUtil {
 
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				Robot robot = new Robot();
 				robot.keyPress(KeyEvent.VK_CONTROL);
@@ -1756,7 +1754,7 @@ public class SeleniumUtil {
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 
@@ -1769,7 +1767,7 @@ public class SeleniumUtil {
 
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				Robot robot = new Robot();
 				robot.keyPress(KeyEvent.VK_CONTROL);
@@ -1779,7 +1777,7 @@ public class SeleniumUtil {
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 
@@ -1791,7 +1789,7 @@ public class SeleniumUtil {
 	public Boolean mouseLeftClick() {
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				Robot robot = new Robot();
 				robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
@@ -1799,7 +1797,7 @@ public class SeleniumUtil {
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 
@@ -1810,7 +1808,7 @@ public class SeleniumUtil {
 	public Boolean mouseRightClick() {
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				Robot robot = new Robot();
 				robot.mousePress(InputEvent.BUTTON3_DOWN_MASK);
@@ -1818,7 +1816,7 @@ public class SeleniumUtil {
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 
@@ -1830,14 +1828,14 @@ public class SeleniumUtil {
 
 		Boolean flag = false;
 
-		for (int i = 1; i <= waitTime * 1000; i++) {
+		for (int i = 1; i <= waitTime * 4; i++) {
 			try {
 				Robot robot = new Robot();
 				robot.mouseMove(x, y);
 				flag = true;
 				break;
 			} catch (Exception e) {
-				sleepMilliSeconds(1);
+				sleepMilliSeconds(250);
 			}
 		}
 
@@ -1863,11 +1861,11 @@ public class SeleniumUtil {
 	}
 
 	public String IntToString(int value) {
-		return Integer.toString(value);
+		return GeneralUtil.IntToString(value);
 	}
 
 	public int StringToInt(String value) {
-		return Integer.parseInt(value);
+		return GeneralUtil.StringToInt(value);
 	}
 
 	public boolean compare(String value1, String value2) {
@@ -1883,57 +1881,39 @@ public class SeleniumUtil {
 	}
 
 	public LocalDate Today() {
-		return LocalDate.now();
+		return GeneralUtil.Today();
 	}
 
 	public LocalDate Yesterday() {
-		return LocalDate.now().minusDays(1);
+		return GeneralUtil.Yesterday();
 	}
 
 	public LocalDate Tomorrow() {
-		return LocalDate.now().plusDays(2);
+		return GeneralUtil.Tomorrow();
 	}
 
 	public LocalDate localDate(int Year, int Month, int day) {
-		return LocalDate.of(Year, Month, day);
+		return GeneralUtil.localDate(Year, Month, day);
 	}
 
 	public String[] toCharArray(String StringArray) {
-		char[] charArray = StringArray.toCharArray();
-		String[] stringArray = new String[charArray.length];
-		for (int i = 0; i < charArray.length; i++) {
-			stringArray[i] = String.valueOf(charArray[i]);
-		}
-		return stringArray;
+		return GeneralUtil.toCharArray(StringArray);
 	}
 
 	public int[] toCharArray(int IntArray) {
-		String StringInt = Integer.toString(IntArray);
-		char[] charArray = StringInt.toCharArray();
-		int[] intArray = new int[charArray.length];
-		for (int i = 0; i < charArray.length; i++) {
-			intArray[i] = Integer.parseInt(String.valueOf(charArray[i]));
-		}
-		return intArray;
+		return GeneralUtil.toCharArray(IntArray);
 	}
 
-	@SuppressWarnings("deprecation")
 	public int getRandom(int min, int max) {
-		return RandomUtils.nextInt(min, max + 1);
+		return GeneralUtil.getRandom(min, max);
 	}
 
 	public int getRandom(int[] array) {
-		int rnd = new Random().nextInt(array.length);
-		return array[rnd];
+		return GeneralUtil.getRandom(array);
 	}
 
 	public String getRandom(String[] array) {
-		int rnd = new Random().nextInt(array.length);
-		return array[rnd];
-	}
-
-	public boolean StringEquals(String value1, String value2) {
-		return value1.equalsIgnoreCase(value2);
+		return GeneralUtil.getRandom(array);
 	}
 
 
