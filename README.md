@@ -1,4 +1,4 @@
-<a href="#"><h1 align="center">AutoVD-Java-Selenium <img src="https://img.shields.io/badge/Version-1.0.6-blue?style=plastic&logo=appveyor" alt="version" ><p align="center"><img src="https://img.shields.io/badge/Java-v1.8-yellowgreen" alt="Java Version"/> <img src="https://img.shields.io/badge/Maven-v3.8-yellowgreen" alt="Maven Version"/> <img src="https://img.shields.io/badge/Selenium-v4.47.0-yellowgreen" alt="Selenium Version"/> <img src="https://img.shields.io/badge/RestAssured-v4.4.0-yellowgreen" alt="RestAssured Version"/> <img src="https://img.shields.io/badge/TestNG-v7.4.0-yellowgreen" alt="TestNG Version"/> <img src="https://img.shields.io/badge/ExtentReport-v5.0.9-yellowgreen" alt="ExtentReport Version"/><br><a href="https://github.com/VigneshDhakshnamoorthy/KMDV-Automation-Framework/actions/workflows/maven.yml"></a></p></h1><h5><p align="center"><a href="https://www.linkedin.com/in/vigneshdhakshnamoorthy/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Vignesh | LinkedIn" width="120px"/></a><br>✍️ : <a href="https://github.com/VigneshDhakshnamoorthy">Vignesh Dhakshnamoorthy</a> ( Senior Software Quality Analyst )<br>📧 : <a href="mailto:KMD.Vignesh@outlook.com">KMD.Vignesh@outlook.com</a> / <a href="mailto:VigneshDhakshnamoorthy@gmail.com">VigneshDhakshnamoorthy@gmail.com </a></a></p> </h5></a>
+<a href="#"><h1 align="center">AutoVD-Java-Selenium <img src="https://img.shields.io/badge/Version-1.0.6-blue?style=plastic&logo=appveyor" alt="version" ><p align="center"><img src="https://img.shields.io/badge/Java-v17-yellowgreen" alt="Java Version"/> <img src="https://img.shields.io/badge/Maven-v3.8-yellowgreen" alt="Maven Version"/> <img src="https://img.shields.io/badge/Selenium-v4.47.0-yellowgreen" alt="Selenium Version"/> <img src="https://img.shields.io/badge/RestAssured-v5.5.0-yellowgreen" alt="RestAssured Version"/> <img src="https://img.shields.io/badge/TestNG-v7.10.2-yellowgreen" alt="TestNG Version"/> <img src="https://img.shields.io/badge/ExtentReport-v5.1.2-yellowgreen" alt="ExtentReport Version"/><br><a href="https://github.com/VigneshDhakshnamoorthy/KMDV-Automation-Framework/actions/workflows/maven.yml"></a></p></h1><h5><p align="center"><a href="https://www.linkedin.com/in/vigneshdhakshnamoorthy/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Vignesh | LinkedIn" width="120px"/></a><br>✍️ : <a href="https://github.com/VigneshDhakshnamoorthy">Vignesh Dhakshnamoorthy</a> ( Senior Software Quality Analyst )<br>📧 : <a href="mailto:KMD.Vignesh@outlook.com">KMD.Vignesh@outlook.com</a> / <a href="mailto:VigneshDhakshnamoorthy@gmail.com">VigneshDhakshnamoorthy@gmail.com </a></a></p> </h5></a>
 
 <hr>
 
@@ -247,11 +247,9 @@ selenium.getDropDownSelectValue()
 selenium.selectDropDown()
 
 selenium.sleep()
-selenium.sleepMilliSeconds()
-selenium.waitDisplayed()
-selenium.waitEnabled()
-selenium.waitPageLoad()
-selenium.waitSelected()
+ selenium.sleepMilliSeconds()
+ selenium.waitUNtil()
+ selenium.waitPageLoad()
 
 selenium.elementScreenShot()
 selenium.pageScreenShot()
@@ -406,7 +404,7 @@ selenium.waitUNtil().visibilityOfNestedElementsLocatedBy()
 
 <a href="#"><h2 align="center">`Helper` Classes</h2></a>
 
-> <h4> Helper Class : <a href="/src/main/java/util/Data/ExcelUtil.java">ExcelUtil</a></h4>
+> <h4> Helper Class : <a href="/src/main/java/kmdv/Data/ExcelUtil.java">ExcelUtil</a></h4>
 
 ```java
 String path = Path.fileFromExcelTestData("sample.xlsx");
@@ -427,7 +425,7 @@ excelUtil.fillGreenColor
 excelUtil.fillRedColor
 ```
 
-> <h4> Helper Class : <a href="/src/main/java/util/Data/JsonUtil.java">JsonUtil</a></h4>
+> <h4> Helper Class : <a href="/src/main/java/kmdv/Data/JsonUtil.java">JsonUtil</a></h4>
 
 ```java
 String path = Path.fileFromJsonTestData("sample.json");
@@ -443,7 +441,7 @@ jsonUtil.getArray
 jsonUtil.getObjFromArray
 ```
 
-> <h4> Helper Class : <a href="/src/main/java/util/Data/PropertiesUtil.java">PropertiesUtil</a></h4>
+> <h4> Helper Class : <a href="/src/main/java/kmdv/Data/PropertiesUtil.java">PropertiesUtil</a></h4>
 
 ```java
 String path = Path.fileFromProperties("sample.properties");
