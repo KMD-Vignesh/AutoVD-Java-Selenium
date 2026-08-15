@@ -52,13 +52,13 @@ public class SeleniumUtil {
 
 	public String getBrowserImage(String BrowserName) {
 		switch (BrowserName) {
-		case "chrome": return "<i class=\"fa fa-chrome\" aria-hidden=\"true\" /i>";
-		case "edge": return "<i class=\"fa fa-edge\" aria-hidden=\"true\" /i>";
-		case "firefox": return "<i class=\"fa fa-firefox\" aria-hidden=\"true\" /i>";
-		case "opera": return "<i class=\"fa fa-opera\" aria-hidden=\"true\" /i>";
-		case "safari": return "<i class=\"fa fa-safari\" aria-hidden=\"true\" /i>";
-		case "chromeheadless": return "<i class=\"fa fa-chrome\" aria-hidden=\"true\" /i>";
-		case "firefoxheadless": return "<i class=\"fa fa-firefox\" aria-hidden=\"true\" /i>";
+		case "chrome": return "<i class=\"fa fa-chrome\" aria-hidden=\"true\"></i>";
+		case "edge": return "<i class=\"fa fa-edge\" aria-hidden=\"true\"></i>";
+		case "firefox": return "<i class=\"fa fa-firefox\" aria-hidden=\"true\"></i>";
+		case "opera": return "<i class=\"fa fa-opera\" aria-hidden=\"true\"></i>";
+		case "safari": return "<i class=\"fa fa-safari\" aria-hidden=\"true\"></i>";
+		case "chromeheadless": return "<i class=\"fa fa-chrome\" aria-hidden=\"true\"></i>";
+		case "firefoxheadless": return "<i class=\"fa fa-firefox\" aria-hidden=\"true\"></i>";
 		}
 		return BrowserName;
 	}
@@ -498,108 +498,6 @@ public class SeleniumUtil {
 
 	public boolean isSelected(WebElement ele) {
 		return ele.isSelected();
-	}
-
-	public Boolean waitDisplayed(WebElement ele) {
-		Boolean flag = false;
-		for (int i = 1; i <= waitTime * 4; i++) {
-			if (isDisplayed(ele)) {
-				flag = true;
-				break;
-			} else {
-				sleepMilliSeconds(250);
-			}
-		}
-		if (!flag) {
-			Log("Element Not Displayed Until " + waitTime + " Seconds");
-		}
-		Assert.assertTrue(flag);
-		return flag;
-	}
-
-	public Boolean waitDisplayed(By by) {
-		Boolean flag = false;
-		for (int i = 1; i <= waitTime * 4; i++) {
-			if (isDisplayed(by)) {
-				flag = true;
-				break;
-			} else {
-				sleepMilliSeconds(250);
-			}
-		}
-		if (!flag) {
-			Log("Element Not Displayed Until " + waitTime + " Seconds");
-		}
-		Assert.assertTrue(flag);
-		return flag;
-	}
-
-	public Boolean waitEnabled(WebElement ele) {
-		Boolean flag = false;
-		for (int i = 1; i <= waitTime * 4; i++) {
-			if (isEnabled(ele)) {
-				flag = true;
-				break;
-			} else {
-				sleepMilliSeconds(250);
-			}
-		}
-		if (!flag) {
-			Log("Element Not Enabled Until " + waitTime + " Seconds");
-		}
-		Assert.assertTrue(flag);
-		return flag;
-	}
-
-	public Boolean waitEnabled(By by) {
-		Boolean flag = false;
-		for (int i = 1; i <= waitTime * 4; i++) {
-			if (isEnabled(by)) {
-				flag = true;
-				break;
-			} else {
-				sleepMilliSeconds(250);
-			}
-		}
-		if (!flag) {
-			Log("Element Not Enabled Until " + waitTime + " Seconds");
-		}
-		Assert.assertTrue(flag);
-		return flag;
-	}
-
-	public Boolean waitSelected(WebElement ele) {
-		Boolean flag = false;
-		for (int i = 1; i <= waitTime * 4; i++) {
-			if (isSelected(ele)) {
-				flag = true;
-				break;
-			} else {
-				sleepMilliSeconds(250);
-			}
-		}
-		if (!flag) {
-			Log("Element Not Selected Until " + waitTime + " Seconds");
-		}
-		Assert.assertTrue(flag);
-		return flag;
-	}
-
-	public Boolean waitSelected(By by) {
-		Boolean flag = false;
-		for (int i = 1; i <= waitTime * 4; i++) {
-			if (isSelected(by)) {
-				flag = true;
-				break;
-			} else {
-				sleepMilliSeconds(250);
-			}
-		}
-		if (!flag) {
-			Log("Element Not Selected Until " + waitTime + " Seconds");
-		}
-		Assert.assertTrue(flag);
-		return flag;
 	}
 
 	public WaitUtil waitUNtil() {
