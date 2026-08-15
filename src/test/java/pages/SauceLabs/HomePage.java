@@ -18,7 +18,7 @@ public class HomePage extends PageBase {
 	public WebElement Cart_item_count;
 
 	@FindBy(xpath = "//a[@class='shopping_cart_link']")
-	public WebElement clickonCart;
+	public WebElement cartIcon;
 
 	public HomePage AddProduct(String ProNam) {
 		String slug = ProNam.toLowerCase(Locale.ROOT).replaceAll("\\s+", "-");
@@ -35,8 +35,8 @@ public class HomePage extends PageBase {
 
 	}
 
-	public void clickonCart() {
-		selenium.jsClick(clickonCart);
+	public void openCart() {
+		selenium.jsClick(cartIcon);
 
 	}
 
