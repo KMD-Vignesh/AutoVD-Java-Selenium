@@ -9,13 +9,11 @@ public class RetryAnalyser implements IRetryAnalyzer {
 
 	@Override
 	public boolean retry(ITestResult result) {
-
-		while (count < retrylim) {
+		if (count < retrylim) {
 			count++;
 			System.out.println("Retry " + count + " " + result.getName());
 			return true;
 		}
-
 		return false;
 	}
 }
