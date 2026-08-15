@@ -3,6 +3,7 @@ package kmdv.Capability;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.time.LocalTime;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -25,7 +26,7 @@ public class ClassConfig extends BaseUtil {
 	XSSFSheet resultSheet;
 	XSSFRow resultRow;
 	XSSFCell resultCell;
-	int counterExcel = 0;
+	private final AtomicInteger counterExcel = new AtomicInteger(1);
 
 	public void BeforeSuite() {
 		System.out.println(
@@ -55,18 +56,18 @@ public class ClassConfig extends BaseUtil {
 			resultCell = resultRow.createCell(i);
 			resultCell.setCellValue(headings[i]);
 		}
-		++counterExcel;
 	}
 
 	public void AfterMethod(ITestResult result, String testType) {
-		
-		Object[] results = {counterExcel,result.getName(),LocalTime.now(), result.getStatus(), result.getTestClass().getName()};
-		resultRow = resultSheet.createRow(counterExcel);
-		for (int i = 0; i < results.length; i++) {
-			resultCell = resultRow.createCell(i);
-			resultCell.setCellValue(results[i].toString());
+		int rowIndex = counterExcel.getAndIncrement();
+		synchronized (resultSheet) {
+			Object[] results = {rowIndex, result.getName(), LocalTime.now(), result.getStatus(), result.getTestClass().getName()};
+			resultRow = resultSheet.createRow(rowIndex);
+			for (int i = 0; i < results.length; i++) {
+				resultCell = resultRow.createCell(i);
+				resultCell.setCellValue(results[i].toString());
+			}
 		}
-		++counterExcel;
 		if (result.getStatus() == ITestResult.SUCCESS) {
 			if(BrowserStack.equalsIgnoreCase("on") && Selenium.get() != null) {
 				markTestStatus("passed", "Passed : "+result.getName(), Selenium.get().getDriver());
