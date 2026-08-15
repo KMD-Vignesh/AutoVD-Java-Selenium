@@ -11,30 +11,20 @@ import java.util.List;
 import kmdv.Common.BaseUtil;
 
 public class TextUtil extends BaseUtil {
-	private BufferedReader reader;
-	private BufferedWriter writer;
+	private final String filePath;
 
 	public TextUtil(String filePath) {
-		try {
-			reader = new BufferedReader(new FileReader(filePath));
-			writer = new BufferedWriter(new FileWriter(filePath));
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
+		this.filePath = filePath;
 	}
 
 	public List<String> readLines() {
 		List<String> lines = new ArrayList<String>();
 
-		try {
+		try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
 			String line;
 			while ((line = reader.readLine()) != null) {
 				lines.add(line);
 			}
-
-			reader.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -42,21 +32,15 @@ public class TextUtil extends BaseUtil {
 	}
 
 	public void writeLine(String stringValue) {
-		try {
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
 			writer.write(stringValue);
-			writer.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
 	public void writeLine(int intValue) {
-		try {
-			writer.write(intValue);
-			writer.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		writeLine(String.valueOf(intValue));
 	}
 
 }
