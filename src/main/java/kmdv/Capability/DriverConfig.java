@@ -82,6 +82,9 @@ ChromeOptions caps = new ChromeOptions();
 				System.out.println("FILE_LOCATION = "+pathRoot.fileFromProperties("browserStack.properties"));
 				e.printStackTrace();
 			}
-		    return remoteWebDriver;
+		    if (remoteWebDriver == null) {
+			throw new IllegalStateException("BrowserStack driver could not be initialised. Check USERNAME/ACCESS_KEY/OS/device in browserStack.properties.");
+		}
+		return remoteWebDriver;
 	}
 }
