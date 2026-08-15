@@ -98,19 +98,13 @@ public class ExcelUtil extends BaseUtil {
 
 	public int getRowCount(String sheetName) {
 		xsheet = xbook.getSheet(sheetName);
-		int rowcount = xsheet.getLastRowNum();
-		xbookClose();
-		finClose();
-		return rowcount;
+		return xsheet.getLastRowNum();
 	}
 
 	public int getCellCount(String sheetName, int rownum) {
 		xsheet = xbook.getSheet(sheetName);
 		xrow = xsheet.getRow(rownum);
-		int cellcount = xrow.getLastCellNum();
-		xbookClose();
-		finClose();
-		return cellcount;
+		return xrow.getLastCellNum();
 	}
 
 	public String getCellDataByNum(String sheetName, int rownum, int colnum) {
@@ -126,9 +120,12 @@ public class ExcelUtil extends BaseUtil {
 		} catch (Exception e) {
 			data = "";
 		}
+		return data;
+	}
+
+	public void close() {
 		xbookClose();
 		finClose();
-		return data;
 	}
 
 	public void setCellData(String sheetName, int rownum, int colnum, String data) {
