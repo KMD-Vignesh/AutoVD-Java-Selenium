@@ -41,7 +41,11 @@ public class CheckoutOverview extends PageBase {
 	}
 
 	public void CheckTax() {
-		ItemEachTotalTax = Math.round((ItemEachTotal * 8) / 100 * 100.0) / 100.0;
+		double subtotal = 0;
+		for (WebElement item : itemValue) {
+			subtotal += Double.parseDouble(item.getText().replace("$", ""));
+		}
+		ItemEachTotalTax = Math.round((subtotal * 8) / 100 * 100.0) / 100.0;
 		selenium.Log("ItemEachTotal Tax: " + ItemEachTotalTax);
 		ItemTotalTax = Double.parseDouble(TotalTax.getText().replace("Tax: $", ""));
 		selenium.Log("ItemTotalTax Tax: " + ItemTotalTax);
