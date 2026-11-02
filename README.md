@@ -14,14 +14,16 @@ Selenium WebDriver · TestNG · REST Assured · Page Objects · ExtentReports</p
 
 </div>
 
+## Intro
+
 <div align="center">
 
-<h3>Vignesh D, QA Lead, Chennai, India</h3>
+<img src="https://img.shields.io/badge/Vignesh&nbsp;D,&nbsp;QA&nbsp;Lead&nbsp;/&nbsp;Architect,Chennai,India-B2C6DB?style=for-the-badge" alt="Vignesh">
 
 <p>
     <a href="https://www.linkedin.com/in/kmd-vignesh/"><img src="https://img.shields.io/badge/LinkedIn-0A75AD?style=for-the-badge" alt="LinkedIn"></a>
-    <a href="https://github.com/KMD-Vignesh"><img src="https://img.shields.io/badge/GitHub-F0E0D0?style=for-the-badge" alt="GitHub"></a>
-    <a href="mailto:KMD.Vignesh@outlook.com"><img src="https://img.shields.io/badge/KMD.Vignesh@Outlook-FF6A80?style=for-the-badge" alt="Email"></a>
+    <a href="https://github.com/KMD-Vignesh"><img src="https://img.shields.io/badge/GitHub-FF6A80?style=for-the-badge" alt="GitHub"></a>
+    <a href="mailto:KMD.Vignesh@outlook.com"><img src="https://img.shields.io/badge/KMD.Vignesh@Outlook-2a9d8f?style=for-the-badge" alt="Email"></a>
 
 </p>
 
