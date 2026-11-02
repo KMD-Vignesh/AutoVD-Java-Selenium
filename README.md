@@ -16,7 +16,7 @@ Selenium WebDriver · TestNG · REST Assured · Page Objects · ExtentReports</p
 
 <div align="center">
 
-<h3>Author : Vignesh D, QA Lead, Chennai, India</h3>
+<h3>Vignesh D, QA Lead, Chennai, India</h3>
 
 <p>
     <a href="https://www.linkedin.com/in/kmd-vignesh/"><img src="https://img.shields.io/badge/LinkedIn-0A75AD?style=for-the-badge" alt="LinkedIn"></a>
