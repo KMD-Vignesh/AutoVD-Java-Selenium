@@ -16,7 +16,7 @@ Selenium WebDriver · TestNG · REST Assured · Page Objects · ExtentReports</p
 
 ## Intro
 
-<div align="center">
+<div>
 
 <img src="https://img.shields.io/badge/Vignesh&nbsp;D,&nbsp;QA&nbsp;Lead&nbsp;/&nbsp;Architect,Chennai,India-B2C6DB?style=for-the-badge" alt="Vignesh">
 
