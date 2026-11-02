@@ -26,7 +26,7 @@ Selenium WebDriver · TestNG · REST Assured · Page Objects · ExtentReports</p
 <p><strong>Senior Software Quality Analyst</strong><br>Chennai, India</p>
 
 <p>
-    <a href="https://www.linkedin.com/in/vigneshdhakshnamoorthy/"><img src="https://img.shields.io/badge/LinkedIn-0A75AD?style=for-the-badge" alt="LinkedIn"></a>
+    <a href="https://www.linkedin.com/in/kmd-vignesh/"><img src="https://img.shields.io/badge/LinkedIn-0A75AD?style=for-the-badge" alt="LinkedIn"></a>
     <a href="https://github.com/KMD-Vignesh"><img src="https://img.shields.io/badge/GitHub-F0E0D0?style=for-the-badge" alt="GitHub"></a>
     <a href="mailto:KMD.Vignesh@outlook.com"><img src="https://img.shields.io/badge/KMD.Vignesh@Outlook-FF6A80?style=for-the-badge" alt="Email"></a>
 
