@@ -21,11 +21,27 @@ Selenium WebDriver · TestNG · REST Assured · Page Objects · ExtentReports</p
   <a href="https://github.com/KMD-Vignesh/AutoVD-Java-Selenium/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-2EA44F?style=for-the-badge" alt="MIT License"></a>
 </p>
 
+</div>
+
+---
+
+## Author
+
+<div align="center">
+
+<h3>Vignesh D</h3>
+
+<p><strong>Senior Software Quality Analyst</strong><br>Chennai, India</p>
+
 <p>
   <a href="https://www.linkedin.com/in/vigneshdhakshnamoorthy/"><img src="https://img.shields.io/badge/LinkedIn-Vignesh%20D-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
   <a href="https://github.com/KMD-Vignesh"><img src="https://img.shields.io/badge/GitHub-KMD--Vignesh-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
-  <a href="mailto:KMD.Vignesh@outlook.com"><img src="https://img.shields.io/badge/Email-KMD.Vignesh%40outlook.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
-  <a href="https://github.com/KMD-Vignesh/AutoVD-Java-Selenium"><img src="https://img.shields.io/badge/Repository-AutoVD--Java--Selenium-0B5FFF?style=for-the-badge&logo=github&logoColor=white" alt="Repository"></a>
+</p>
+
+<p>
+  <a href="mailto:KMD.Vignesh@outlook.com">KMD.Vignesh@outlook.com</a>
+  &nbsp;·&nbsp;
+  <a href="mailto:VigneshDhakshnamoorthy@gmail.com">VigneshDhakshnamoorthy@gmail.com</a>
 </p>
 
 </div>
@@ -60,18 +76,17 @@ Selenium WebDriver · TestNG · REST Assured · Page Objects · ExtentReports</p
 
 | Section | Section |
 | :--- | :--- |
+| [Author](#author) | [Project at a Glance](#project-at-a-glance) |
 | [Overview](#overview) | [API Reference](#api-reference) |
 | [Key Features](#key-features) | [SeleniumUtil](#seleniumutil) |
-| [Tech Stack](#tech-stack) | [WaitUtil](#waitutil) |
-| [Architecture](#architecture) | [RestAPIUtil](#restapiutil) |
-| [Repository Structure](#repository-structure) | [Data Utilities](#data-utilities) |
-| [Requirements](#requirements) | [PathConfig](#pathconfig) |
-| [Quick Start](#quick-start) | [Dependencies](#dependencies) |
-| [Configuration](#configuration) | [Troubleshooting](#troubleshooting) |
-| [Writing Tests](#writing-tests) | [Contributing](#contributing) |
+| [Architecture](#architecture) | [WaitUtil](#waitutil) |
+| [Repository Structure](#repository-structure) | [RestAPIUtil](#restapiutil) |
+| [Requirements](#requirements) | [Data Utilities](#data-utilities) |
+| [Quick Start](#quick-start) | [PathConfig](#pathconfig) |
+| [Configuration](#configuration) | [Dependencies](#dependencies) |
+| [Writing Tests](#writing-tests) | [Troubleshooting](#troubleshooting) |
 | [Test Data](#test-data) | [License](#license) |
-| [Running Tests](#running-tests) | [Author](#author) |
-| [Reports](#reports) | [Project at a Glance](#project-at-a-glance) |
+| [Running Tests](#running-tests) | [Reports](#reports) |
 
 ---
 
@@ -107,29 +122,6 @@ The framework is built to be read as much as it is built to be run:
 | **Cross-browser** | Chrome, Firefox, Edge, Safari, and headless Chrome/Firefox from one property. |
 | **BrowserStack toggle** | Flip `BrowserStack=on` to run the same tests on BrowserStack Automate. |
 | **Zero driver setup** | Selenium 4's Selenium Manager resolves browser drivers automatically. |
-
----
-
-## Tech Stack
-
-<p align="center">
-  <img src="src/main/resources/Images/framework.png" alt="Java, Maven, Selenium, REST Assured, TestNG, ExtentReports, BrowserStack" width="720">
-</p>
-
-| Layer | Technology | Version | Role |
-| :--- | :--- | :--- | :--- |
-| Language | Java | 17 | Source and target level in `pom.xml` |
-| Build | Apache Maven | 3.8+ | Dependency management and suite execution |
-| UI automation | Selenium WebDriver | 4.47.0 | Browser control, Selenium Manager |
-| Test runner | TestNG | 7.10.2 | Lifecycle, assertions, parallel execution, retries |
-| API automation | REST Assured | 5.5.0 | HTTP requests, status codes, response bodies |
-| HTML reporting | ExtentReports | 5.1.2 | Per-test steps, authors, devices, screenshots |
-| Excel reporting | Apache POI | 5.3.0 | Result workbook and Excel test data |
-| JSON | json-simple | 1.1.1 | JSON parsing |
-| JSON binding | Gson | 2.10.1 (transitive) | JSON → POJO mapping in `JsonUtil` |
-| File utilities | Commons IO | 2.16.1 (transitive) | Classpath resource reading in `JsonUtil` |
-| Email | JavaMail | 1.4.5 | Optional report attachment email |
-| Logging | SLF4J Simple + Log4j2 | 1.7.36 / 2.23.1 | Quieting dependency logging during tests |
 
 ---
 
@@ -1264,8 +1256,6 @@ Static helpers. `SeleniumUtil` and `RestAPIUtil` expose wrappers for most of the
 
 ## Dependencies
 
-### Direct dependencies (`pom.xml`)
-
 | Dependency | Version | Scope | Used for |
 | :--- | :--- | :--- | :--- |
 | [`org.seleniumhq.selenium:selenium-java`](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java) | `4.47.0` | compile | Browser automation and Selenium Manager |
@@ -1278,15 +1268,10 @@ Static helpers. `SeleniumUtil` and `RestAPIUtil` expose wrappers for most of the
 | [`io.rest-assured:rest-assured`](https://mvnrepository.com/artifact/io.rest-assured/rest-assured) | `5.5.0` | compile | API testing |
 | [`org.slf4j:slf4j-simple`](https://mvnrepository.com/artifact/org.slf4j/slf4j-simple) | `1.7.36` | test | SLF4J binding |
 | [`org.apache.logging.log4j:log4j-core`](https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core) | `2.23.1` | test | Log4j2 implementation |
+| [`com.google.code.gson:gson`](https://mvnrepository.com/artifact/com.google.code.gson/gson) | `2.10.1` | transitive | JSON → POJO mapping in `JsonUtil.getPojo(...)` |
+| [`commons-io:commons-io`](https://mvnrepository.com/artifact/commons-io/commons-io) | `2.16.1` | transitive | Classpath resource reading in `JsonUtil` |
 
-### Notable transitive dependencies
-
-| Dependency | Version | Used by |
-| :--- | :--- | :--- |
-| [`com.google.code.gson:gson`](https://mvnrepository.com/artifact/com.google.code.gson/gson) | `2.10.1` | `JsonUtil.getPojo(...)` |
-| [`commons-io:commons-io`](https://mvnrepository.com/artifact/commons-io/commons-io) | `2.16.1` | `JsonUtil` classpath resource reading |
-
-> `JsonUtil` uses Gson and Commons IO directly even though both currently arrive transitively. If you tighten dependency management, declare them explicitly in `pom.xml`.
+> The first ten rows are declared in `pom.xml`. Gson and Commons IO are used directly by `JsonUtil` but currently arrive transitively; declare them explicitly if you tighten dependency management.
 
 ### Build configuration
 
@@ -1321,33 +1306,6 @@ Static helpers. `SeleniumUtil` and `RestAPIUtil` expose wrappers for most of the
 
 ---
 
-## Contributing
-
-Contributions are welcome.
-
-1. **Fork** the repository and create a feature branch:
-   ```bash
-   git checkout -b feature/my-helper
-   ```
-2. **Make the change** in the appropriate package:
-   - Browser helpers → `src/main/java/kmdv/Common/SeleniumUtil.java`
-   - Wait wrappers → `src/main/java/kmdv/Common/WaitUtil.java`
-   - API helpers → `src/main/java/kmdv/Common/RestAPIUtil.java`
-   - Data utilities → `src/main/java/kmdv/Data/`
-   - Reporting → `src/main/java/kmdv/Report/`
-   - Example tests and page objects → `src/test/java/`
-3. **Add or update a test** in `src/test/java/testCase/` that exercises the change.
-4. **Run the suite**:
-   ```bash
-   mvn clean test
-   ```
-5. **Update this README** if you add a public helper method or change configuration.
-6. **Open a pull request** with a short description of the change and the test evidence.
-
-There is no GitHub Actions workflow in this repository yet, so run the suite locally before opening a PR.
-
----
-
 ## License
 
 Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for the full text.
@@ -1357,38 +1315,3 @@ MIT License
 
 Copyright (c) 2024 Vignesh D
 ```
-
----
-
-## Author
-
-<div align="center">
-
-<h3>Vignesh D</h3>
-
-<p><strong>Senior Software Quality Analyst</strong><br>Chennai, India</p>
-
-<p>
-  <a href="https://www.linkedin.com/in/vigneshdhakshnamoorthy/"><img src="https://img.shields.io/badge/LinkedIn-Vignesh%20D-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-  <a href="https://github.com/KMD-Vignesh"><img src="https://img.shields.io/badge/GitHub-KMD--Vignesh-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
-</p>
-
-<p>
-  <a href="mailto:KMD.Vignesh@outlook.com">KMD.Vignesh@outlook.com</a>
-  &nbsp;·&nbsp;
-  <a href="mailto:VigneshDhakshnamoorthy@gmail.com">VigneshDhakshnamoorthy@gmail.com</a>
-</p>
-
-<p>
-  <a href="https://github.com/KMD-Vignesh/AutoVD-Java-Selenium">AutoVD-Java-Selenium</a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/KMD-Vignesh/AutoVD-Java-Selenium/issues">Issues</a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/KMD-Vignesh/AutoVD-Java-Selenium/blob/main/LICENSE">MIT License</a>
-</p>
-
-</div>
-
----
-
-<p align="center"><sub>Built and maintained by Vignesh D. If this framework helps you, consider starring the repository.</sub></p>
