@@ -1,468 +1,243 @@
-<a href="#"><h1 align="center">AutoVD-Java-Selenium <img src="https://img.shields.io/badge/Version-1.0.6-blue?style=plastic&logo=appveyor" alt="version" ><p align="center"><img src="https://img.shields.io/badge/Java-v17-yellowgreen" alt="Java Version"/> <img src="https://img.shields.io/badge/Maven-v3.8-yellowgreen" alt="Maven Version"/> <img src="https://img.shields.io/badge/Selenium-v4.47.0-yellowgreen" alt="Selenium Version"/> <img src="https://img.shields.io/badge/RestAssured-v5.5.0-yellowgreen" alt="RestAssured Version"/> <img src="https://img.shields.io/badge/TestNG-v7.10.2-yellowgreen" alt="TestNG Version"/> <img src="https://img.shields.io/badge/ExtentReport-v5.1.2-yellowgreen" alt="ExtentReport Version"/><br><a href="https://github.com/VigneshDhakshnamoorthy/KMDV-Automation-Framework/actions/workflows/maven.yml"></a></p></h1><h5><p align="center"><a href="https://www.linkedin.com/in/vigneshdhakshnamoorthy/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Vignesh | LinkedIn" width="120px"/></a><br>✍️ : <a href="https://github.com/VigneshDhakshnamoorthy">Vignesh Dhakshnamoorthy</a> ( Senior Software Quality Analyst )<br>📧 : <a href="mailto:KMD.Vignesh@outlook.com">KMD.Vignesh@outlook.com</a> / <a href="mailto:VigneshDhakshnamoorthy@gmail.com">VigneshDhakshnamoorthy@gmail.com </a></a></p> </h5></a>
+<!--
+  Sample 2 — concise README standard for the AutoVD family.
+  Verified against this repository on 2026-11-02.
+-->
 
-<hr>
+<div align="center">
 
-> <h5> <a href="https://github.com/VigneshDhakshnamoorthy/KMDV-Automation-Framework/raw/master/KMDVFramework.jar"><img src="https://img.shields.io/badge/Download-KMDV%20Framework.jar-red" alt="Download JAR"/></a></h5>
+<h1>AutoVD-Java-Selenium</h1>
 
-```python
-// download KMDVFramework.jar from above link and save in Project folder
-// add that as a dependency
+<p><strong>Hybrid UI + API test automation framework for Java</strong><br>
+Selenium WebDriver · TestNG · REST Assured · Page Objects · ExtentReports</p>
+
+<p>
+  <a href="https://github.com/KMD-Vignesh/AutoVD-Java-Selenium"><img src="https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 17"></a>
+  <a href="https://github.com/KMD-Vignesh/AutoVD-Java-Selenium"><img src="https://img.shields.io/badge/Selenium-4.47.0-43B02A?style=for-the-badge&logo=selenium&logoColor=white" alt="Selenium 4.47.0"></a>
+  <a href="https://github.com/KMD-Vignesh/AutoVD-Java-Selenium"><img src="https://img.shields.io/badge/TestNG-7.10.2-FF6F00?style=for-the-badge" alt="TestNG 7.10.2"></a>
+  <a href="https://github.com/KMD-Vignesh/AutoVD-Java-Selenium/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-2EA44F?style=for-the-badge" alt="MIT License"></a>
+</p>
+
+</div>
+
+<div>
+
+<h3>Author : Vignesh D</h3>
+
+<p><strong>Senior Software Quality Analyst</strong><br>Chennai, India</p>
+
+<p>
+    <a href="https://github.com/KMD-Vignesh"><img src="https://img.shields.io/badge/GitHub-KMD--Vignesh-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+  <a href="https://www.linkedin.com/in/vigneshdhakshnamoorthy/"><img src="https://img.shields.io/badge/LinkedIn-Vignesh%20D-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Email-0A66C2?style=for-the-badge&logo=email&logoColor=white" alt="Email"> :   
+  <a href="mailto:KMD.Vignesh@outlook.com">KMD.Vignesh@outlook.com</a> , <a href="mailto:VigneshDhakshnamoorthy@gmail.com">VigneshDhakshnamoorthy@gmail.com</a>
+</p>
+
+</div>
+
+## What It Is
+
+A Selenium + TestNG framework that keeps the boilerplate out of your tests. Extend `TestBase`, call `Selenium(url)` or `RestAPI(baseURI)`, and you get a thread-safe browser or API client, an Extent test, automatic screenshots, and an Excel result row when the method finishes.
+
+- **One line to start** — `Selenium(url)` sets up the driver, report entry, and helper object.
+- **Page objects that stay small** — `PageBase` injects the driver and helper, then initialises `@FindBy` fields.
+- **Parallel by default** — drivers and helpers live in `ThreadLocal`s; the bundled suite runs 5 methods at a time.
+- **Output you can use** — ExtentReports HTML, Excel results, and failure/skip screenshots on every run.
+
+## Framework Family
+
+Seven implementations of the same layered idea. Pick the stack your team already uses; the concepts and reports stay familiar.
+
+| Framework | Stack | Covers | Repository |
+| :--- | :--- | :--- | :--- |
+| **Java + Selenium** — this repo | Java 17 · Selenium 4 · TestNG | UI + REST | [AutoVD-Java-Selenium](https://github.com/KMD-Vignesh/AutoVD-Java-Selenium) |
+| **Java + Playwright** | Java · Playwright · TestNG | UI + REST | [AutoVD-Java-Playwright](https://github.com/KMD-Vignesh/AutoVD-Java-Playwright) |
+| **C# + Playwright** | C# · Playwright · NUnit | UI + REST | [AutoVD-CS-Playwright](https://github.com/KMD-Vignesh/AutoVD-CS-Playwright) |
+| **Python + Selenium** | Python · Selenium · pytest | UI + REST | [AutoVD-Python-Selenium](https://github.com/KMD-Vignesh/AutoVD-Python-Selenium) |
+| **Python + Playwright** | Python · Playwright · pytest | UI + REST | [AutoVD-Python-Playwright](https://github.com/KMD-Vignesh/AutoVD-Python-Playwright) |
+| **TypeScript + Playwright** | TypeScript · Playwright | UI + REST | [AutoVD-Typescript-Playwright](https://github.com/KMD-Vignesh/AutoVD-Typescript-Playwright) |
+| **TypeScript + Cypress** | TypeScript · Cypress | UI (E2E) | [AutoVD-Typescript-Cypress](https://github.com/KMD-Vignesh/AutoVD-Typescript-Cypress) |
+
+## Quick Start
+
+**Prerequisites:** JDK 17+, Maven 3.8+, and Chrome (or another supported browser). Drivers download themselves via Selenium Manager.
+
+```bash
+git clone https://github.com/KMD-Vignesh/AutoVD-Java-Selenium.git
+cd AutoVD-Java-Selenium
+mvn clean test
 ```
 
-> #### 🤝 Dependencies
-> 
-> <h5> <a href="#">KMDVFramework dependency</a></h5>
+The default suite runs three scenarios: two SauceDemo UI tests and one ReqRes API call. Headless Chrome is the default, so no window opens.
 
-```xml
-<dependency>
-	<groupId>org.KMDV</groupId>
-	<artifactId>KMDV-Java-Framework</artifactId>
-	<version>1.0.6</version>
-	<scope>system</scope>
-	<systemPath>${project.basedir}/KMDVFramework.jar</systemPath>
-</dependency>
+Open the results:
+
+```bash
+open Report-ScreenShot/ExtentReport/ExtentReport.html
+open Report-ScreenShot/ExcelReport/ExcelResult.xlsx
 ```
 
-> <h5> <a href="/pom.xml">Other dependencies (Link)</a></h5>
+On Linux use `xdg-open`; on Windows open the files from Explorer.
 
-<table>
-<tr>
-    <td><b>GroupId</b></td>
-    <td><b>ArtifactId</b></td>
-    <td><b>Version</b></td>
-  </tr>
-  <tr>
-    <td>org.testng</td>
-    <td>testng</td>
-    <td>7.5</td>
-  </tr>
-  <tr>
-    <td>org.seleniumhq.selenium</td>
-    <td>selenium-java</td>
-    <td>4.1.1</td>
-  </tr>
-  <tr>
-    <td>io.github.bonigarcia</td>
-    <td>webdrivermanager</td>
-    <td>5.1.1</td>
-  </tr>  
-  <tr>
-    <td>org.apache.poi</td>
-    <td>poi</td>
-    <td>5.2.2</td>
-  </tr>  
-  <tr>
-    <td>org.apache.poi</td>
-    <td>poi-ooxml</td>
-    <td>5.2.2</td>
-  </tr>  
-  <tr>
-    <td>com.aventstack</td>
-    <td>extentreports</td>
-    <td>5.0.9</td>
-  </tr>  
-  <tr>
-    <td>org.projectlombok</td>
-    <td>lombok</td>
-    <td>1.18.24</td>
-  </tr>
+## Configuration
 
-<a href="#"><h2 align="center">`API` Automation</h2></a>
+Everything runtime lives in `src/test/resources/Properties/`.
 
-> <h4> <a href="#">API</a> : TestCase</h4>
-
-```java
-public class demo extends TestBase {
-
-	@Author(Name = "Dhakshna")
-	@Test
-	public void demoAPI() {
-		String baseURI ="https://reqres.in/";
-		RestAPIUtil restAPI= RestAPI(baseURI);
-		restAPI.Log( restAPI.getStatusCode() );
-    }
-
-}
-```
-
-> <h4> <a href="#">API</a> : Helper Methods</h4>
-
-```java
-restAPI.getStatusCode
-restAPI.getBody
-restAPI.getMethodName
-restAPI.Log
-restAPI.logC
-restAPI.logE
-restAPI.IntToString
-restAPI.StringToInt
-restAPI.StringEquals
-restAPI.Today
-restAPI.Yesterday
-restAPI.Tomorrow
-restAPI.localDate
-restAPI.toCharArray
-restAPI.getRandom
-```
-
-<hr>
-
-<a href="#"><h2 align="center">`WEB` Automation</h2></a>
-
-> #### browser.properties ( src / test / resources / Properties )
+`browser.properties`:
 
 ```properties
-BrowserName = chrome
-waitTime = 15
-BrowserStack = off
+BrowserName=chromeheadless
+waitTime=15
+BrowserStack=off
 ```
 
-<table>
+| Key | Default | What it does |
+| :--- | :--- | :--- |
+| `BrowserName` | `chromeheadless` | `chrome`, `firefox`, `edge`, `safari`, `chromeheadless`, `firefoxheadless` |
+| `waitTime` | `15` | Implicit wait, helper retry budget, and `WaitUtil` timeout, in seconds |
+| `BrowserStack` | `off` | `on` sends the same tests to BrowserStack |
 
-> #### browserStack.properties ( src / test / resources / Properties )
-
-```properties
-USERNAME = 
-ACCESS_KEY = 
-
-os = Windows
-os_version = 10
-
-browser = Chrome
-browser_version = latest
-```
-
-> #### locators.properties ( src / test / resources / Properties )
+`locators.properties` maps readable names to Selenium locators:
 
 ```properties
 Username_id = user-name
+Cart_cssSelector = .shopping_cart_link
 ```
 
-to get the value : Locators.get("Username_id")
+Keys must be `<name>_<strategy>` with exactly one underscore. Strategies: `id`, `name`, `className`, `tagName`, `xpath`, `cssSelector`, `linkText`, `partialLinkText`. Use them with `selenium.getElement(Locators.get("Username_id"))`.
 
-<h1></h1>
+For BrowserStack, fill in `browserStack.properties` and set `BrowserStack=on`. Credentials stay out of Git.
 
-> <h4> <a href="#">WEB</a> : PageObject</h4>
+## Writing Tests
+
+A web test — extend `TestBase`, call `Selenium(url)`, and use a page object:
+
+```java
+public class demo1 extends TestBase {
+
+    @Author(Name = "Vignesh")
+    @Test
+    public void saucedemo1() {
+        SeleniumUtil selenium = Selenium("https://www.saucedemo.com/");
+
+        HomePage home = new LoginPage().Login();
+        int count = home.AddProduct("Sauce Labs Onesie").Check_Cart_item_count();
+        selenium.Log("Cart count: " + count);
+    }
+}
+```
+
+An API test — same lifecycle, different helper:
+
+```java
+@Test
+public void getUser() {
+    RestAPIUtil restAPI = RestAPI("https://reqres.in/");
+    restAPI.Log(restAPI.getStatusCode("api/users/2"));
+    restAPI.Log(restAPI.getBody("api/users/2"));
+}
+```
+
+A page object — fields are injected, `selenium` and `driver` are already available:
 
 ```java
 public class LoginPage extends PageBase {
 
-	private final By password = By.xpath("*//[@id='password']");
-	@FindBy(id="login-button") private WebElement loginbutton;
+    @FindBy(id = "password")
+    private WebElement password;
 
-	public LoginPage Login() {
-		selenium.type(Locators.get("Username_id"), "standard_user");
-		selenium.type(password, "secret_sauce");
-		selenium.click(loginbutton);
-		return this;
-	}
-```
+    @FindBy(id = "login-button")
+    private WebElement loginButton;
 
-> <h4> <a href="#">WEB</a> : TestCase</h4>
-
-```java
-public class demo extends TestBase {
-
-	@Author(Name = "Vignesh")
-	@Test
-	public void demoWEB() {
-		String webURL ="https://www.saucedemo.com/";
-		SeleniumUtil selenium = Selenium(webURL);
-	
-		new LoginPage().Login();
-		selenium.Log("Logged in successfully");
+    public HomePage Login() {
+        selenium.type(Locators.get("Username_id"), "standard_user");
+        selenium.type(password, "secret_sauce");
+        selenium.click(loginButton);
+        return new HomePage();
     }
-
 }
 ```
 
-> <h4> <a href="#">WEB</a> : Helper Methods</h4>
+## Framework Map
 
-```java
-selenium.Log()
-selenium.logConsole()
-selenium.logExtent()
-selenium.logList()
-selenium.logCList()
-selenium.logEList()
+Read these in order. Everything else is a helper around them.
 
-selenium.findBy_ClassName()
-selenium.findBy_CssSelector()
-selenium.findBy_ID()
-selenium.findBy_LinkText()
-selenium.findBy_Name()
-selenium.findBy_PartialLinkText()
-selenium.findBy_Xpath()
+| Package | Key classes | What it does |
+| :--- | :--- | :--- |
+| `kmdv.Base` | `TestBase`, `PageBase` | Suite/thread lifecycle and the page-object base. **Start here.** |
+| `kmdv.Capability` | `ClassConfig`, `DriverConfig`, `PathConfig` | Suite setup, thread-local driver creation, folder paths |
+| `kmdv.Common` | `SeleniumUtil`, `WaitUtil`, `RestAPIUtil` | Browser, wait, and API helpers your tests call |
+| `kmdv.Data` | `ExcelUtil`, `JsonUtil`, `PropertiesUtil`, `TextUtil`, `LocatorsUtil` | Test data and locator loading |
+| `kmdv.Report` | `ExtentReportManger`, `ScreenShot`, `SendMail` | Extent reports, screenshots, optional email |
+| `kmdv.config.TestNG` | `Author`, `TestID`, `RetryAnalyser`, `RetryTransform` | Test metadata and automatic retry |
+| `pages.*` | SauceLabs examples | Where your page objects go |
+| `testCase.*` | `demo1`, `demo2`, `demo3` | Where your tests go |
 
-selenium.findAll_ClassName()
-selenium.findAll_CssSelector()
-selenium.findAll_ID()
-selenium.findAll_LinkText()
-selenium.findAll_Name()
-selenium.findAll_PartialLinkText()
-selenium.findAll_Xpath()
+The helper surface is large (185 methods in `SeleniumUtil`, 44 in `WaitUtil`), but a few carry most tests:
 
-selenium.getShadowRoot()
-selenium.getShadowContent()
+| Helper | Use |
+| :--- | :--- |
+| `Selenium(url)` / `RestAPI(baseURI)` | Start a browser or API session |
+| `getElement(locator)` | Find one element with retry |
+| `click(element)` / `type(element, text)` | Interact, with stale-element recovery |
+| `getText(element)` / `isDisplayed(element)` | Read state |
+| `waitUNtil(condition)` | Explicit wait for any `ExpectedConditions` |
+| `Log(message)` | Write to the Extent report |
+| `elementScreenShot(element)` | Attach an element image to the report |
 
-selenium.getElement()
-selenium.getElements()
-selenium.getList()
+For the complete inventory, read the class: [`SeleniumUtil.java`](src/main/java/kmdv/Common/SeleniumUtil.java), [`WaitUtil.java`](src/main/java/kmdv/Common/WaitUtil.java).
 
-selenium.getBY()
-selenium.refreshElement()
-selenium.getLocatorString()
+## How a Run Works
 
-selenium.getAttribute()
-selenium.setAttribute()
+1. `@BeforeSuite` creates the folders, loads properties, starts ExtentReports, and opens the Excel workbook.
+2. Your test calls `Selenium(url)` or `RestAPI(baseURI)`, which creates a thread-local driver and an Extent test.
+3. Page objects wait for `document.readyState` and initialise `@FindBy` fields.
+4. `@AfterMethod` writes the Excel row, captures failure/skip screenshots, quits the driver, and clears the thread.
+5. `@AfterSuite` flushes the Extent report and closes the workbook.
 
-selenium.click()
-selenium.type()
-selenium.typeENTER()
-selenium.typeTAB()
-selenium.back()
-selenium.clear()
-selenium.clickList()
-selenium.clickSleep()
-selenium.forward()
-selenium.getCurrentUrl()
-selenium.getDriver()
-selenium.getLocation()
-selenium.getMethodName()
-selenium.getPageSource()
-selenium.getText()
-selenium.getTitle()
-selenium.isDisplayed()
-selenium.isEnabled()
-selenium.isSelected()
-selenium.maximize()
-selenium.minimize()
-selenium.navigateTo()
-selenium.refresh()
-selenium.screenHeight()
-selenium.screenWidth()
-selenium.windowDimension()
+## Project Layout
 
-selenium.getDropDownSelectValue()
-selenium.selectDropDown()
-
-selenium.sleep()
- selenium.sleepMilliSeconds()
- selenium.waitUNtil()
- selenium.waitPageLoad()
-
-selenium.elementScreenShot()
-selenium.pageScreenShot()
-
-selenium.defaultFrame()
-selenium.parentFrame()
-selenium.switchFrame()
-selenium.getTabs()
-selenium.switchTab()
-selenium.countTabs()
-selenium.currentTab()
-
-selenium.acceptAlert()
-selenium.dismissAlert()
-selenium.getAlert()
-selenium.textAlert()
-selenium.typeAlert()
-
-selenium.jsClick()
-selenium.jsType()
-selenium.scrollTO_XY()
-selenium.scrollBY_XY()
-selenium.scrollIntoView()
-selenium.executeScript()
-
-selenium.actionClick()
-selenium.actionDOWN()
-selenium.actionENTER()
-selenium.actionESCAPE()
-selenium.actionLEFT()
-selenium.actionRETURN()
-selenium.actionRIGHT()
-selenium.actionTAB()
-selenium.actionType()
-selenium.actionUP()
-selenium.contextClick()
-selenium.doubleClick()
-selenium.dragAndDrop()
-
-selenium.mouseLeftClick()
-selenium.mouseMove()
-selenium.mouseRightClick()
-selenium.moveTo()
-selenium.robotBACKSPACE()
-selenium.robotCOPY()
-selenium.robotCUT()
-selenium.robotDOWN()
-selenium.robotENTER()
-selenium.robotESCAPE()
-selenium.robotLEFT()
-selenium.robotPASTE()
-selenium.robotRIGHT()
-selenium.robotSELECT()
-selenium.robotTAB()
-selenium.robotUP()
-
-selenium.countList()
-selenium.compare()
-selenium.IntToString()
-selenium.getRandom()
-selenium.localDate()
-selenium.listContains()
-selenium.StringEquals()
-selenium.StringToInt()
-selenium.toCharArray()
-selenium.Today()
-selenium.Tomorrow()
-selenium.Yesterday()
-
-selenium.waitUNtil().alertIsPresent()
-selenium.waitUNtil().attributeContains()
-selenium.waitUNtil().attributeToBe()
-selenium.waitUNtil().attributeToBeNotEmpty()
-selenium.waitUNtil().elementSelectionStateToBe()
-selenium.waitUNtil().elementToBeClickable()
-selenium.waitUNtil().elementToBeSelected()
-selenium.waitUNtil().frameToBeAvailableAndSwitchToIt()
-selenium.waitUNtil().invisibilityOf()
-selenium.waitUNtil().invisibilityOfAllElements()
-selenium.waitUNtil().invisibilityOfElementLocated()
-selenium.waitUNtil().invisibilityOfElementWithText()
-selenium.waitUNtil().javaScriptThrowsNoExceptions()
-selenium.waitUNtil().jsReturnsValue()
-selenium.waitUNtil().numberOfElementsToBe()
-selenium.waitUNtil().numberOfElementsToBeLessThan()
-selenium.waitUNtil().numberOfElementsToBeMoreThan()
-selenium.waitUNtil().numberOfWindowsToBe()
-selenium.waitUNtil().presenceOfAllElementsLocatedBy()
-selenium.waitUNtil().presenceOfElementLocated()
-selenium.waitUNtil().presenceOfNestedElementLocatedBy()
-selenium.waitUNtil().presenceOfNestedElementsLocatedBy()
-selenium.waitUNtil().stalenessOf()
-selenium.waitUNtil().textToBe()
-selenium.waitUNtil().textToBePresentInElementLocated()
-selenium.waitUNtil().textToBePresentInElement()
-selenium.waitUNtil().textToBePresentInElementValue()
-selenium.waitUNtil().titleContains()
-selenium.waitUNtil().titleIs()
-selenium.waitUNtil().urlContains()
-selenium.waitUNtil().urlToBe()
-selenium.waitUNtil().visibilityOf()
-selenium.waitUNtil().visibilityOfAllElements()
-selenium.waitUNtil().visibilityOfElementLocated()
-selenium.waitUNtil().visibilityOfAllElementsLocatedBy()
-selenium.waitUNtil().visibilityOfNestedElementsLocatedBy()
+```text
+AutoVD-Java-Selenium/
+├── pom.xml                  # dependencies, Java 17, Surefire
+├── SuitesXML/               # TestNG suite files
+├── src/main/java/kmdv/      # framework: Base, Capability, Common, Data, Report
+├── src/test/java/pages/     # page objects (example: SauceLabs)
+├── src/test/java/testCase/  # demo tests
+├── src/test/resources/      # properties, locators, Excel/JSON/text data
+├── Report-ScreenShot/       # generated: Extent, Excel, screenshots
+└── target/                  # generated: Maven + Surefire output
 ```
 
-<hr>
+`Report-ScreenShot/` and `target/` are gitignored and recreated on each run.
 
-> #### 📁 Folders
+## Reports
 
-<table> 
-<tr>
-	  <td>
-	    <b>SuitesXML</b> <br>
-	    <a href="/SuitesXML"><i>can store testRunner XML files </i></a>
-	</td>
-	<td>
-	    <b>src / test / resources / Properties</b> <br>
-	    <a href="/src/test/resources/Properties"><i>First Time Auto Generate : browser.properties, browserStack.properties, locators.properties</i></a>
-	</td>
-</tr>
-<tr>
-	<td><img src="/src/main/resources/Images/folders.png" alt="folders" width="270" height="430"> </td> 
- 	<td> 
-	   <b> src / test / resources / TestData </b><i><br>Excel<br>JSON<br>Others<br>Text<br></i>
-	    <a href="/src/test/resources/TestData"><i>can store xlsx, json, txt, etc...</i></a> <hr>
-	    <b>Report-Screenshot / ExtentReport</b> <br>
-	    <a href="/Report-ScreenShot/ExtentReport"><i>Each Time Auto Generate : Extent.Html</i></a>  <hr>
-	    <b>Report-Screenshot / Screenshots</b> <i><br>Failed<br>Passed<br>Skipped<br></i>
-	    <a href="/Report-ScreenShot/ScreenShots"><i>Passed - Manual , Failed - Auto , Skipped - Auto</i></a>
-		</td>
-</tr>
+| Output | Location |
+| :--- | :--- |
+| ExtentReports HTML | `Report-ScreenShot/ExtentReport/ExtentReport.html` |
+| Excel results | `Report-ScreenShot/ExcelReport/ExcelResult.xlsx` |
+| Screenshots | `Report-ScreenShot/ScreenShots/{Passed,Failed,Skipped}/` |
+| Surefire HTML | `target/surefire-reports/index.html` |
 
-> #### SuiteXML
+Reports are cleaned at suite start, so each run reflects only that run.
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="KMDV Automation" parallel="methods" thread-count="5">
- 
-  <test name="KMDV Test">
-  	<classes>
-     	<class name="testCase.demo"></class>
-  	</classes>
-  </test>
-  
-</suite>
-```
+## Troubleshooting
 
-<hr>
+| Symptom | Fix |
+| :--- | :--- |
+| `IllegalArgumentException: Update Proper BrowserName` | Use one of the six supported browser values. |
+| Locator from `locators.properties` is ignored | The key must have exactly one underscore and a valid strategy suffix. |
+| `NullPointerException` in `JsonUtil.getPojo` | Put the JSON under `src/test/resources/TestData/JSON/` and load it with `fileFromJsonTestData(...)`. |
+| Empty or partial Extent report | The JVM exited before `@AfterSuite`; let the suite finish so the report can flush. |
+| Safari session fails | Run `safaridriver --enable` once on macOS. |
+| BrowserStack session fails | Check credentials, platform values, and that `BrowserStack=on`. |
 
-<a href="#"><h2 align="center">`Helper` Classes</h2></a>
+## License
 
-> <h4> Helper Class : <a href="/src/main/java/kmdv/Data/ExcelUtil.java">ExcelUtil</a></h4>
+MIT. See [`LICENSE`](LICENSE).
 
-```java
-String path = Path.fileFromExcelTestData("sample.xlsx");
-ExcelUtil excelUtil = new ExcelUtil (path) ;
-```
-
-```java
-excelUtil.getCellDataByValue
-excelUtil.getFullExcelData
-excelUtil.getRowColNumbers
-excelUtil.getRowNumber
-excelUtil.getColumnNumber
-excelUtil.getRowCount
-excelUtil.getCellCount
-excelUtil.getCellDataByNum
-excelUtil.setCellData
-excelUtil.fillGreenColor
-excelUtil.fillRedColor
-```
-
-> <h4> Helper Class : <a href="/src/main/java/kmdv/Data/JsonUtil.java">JsonUtil</a></h4>
-
-```java
-String path = Path.fileFromJsonTestData("sample.json");
-JsonUtil jsonUtil = new JsonUtil (path) ;
-```
-
-```java
-jsonUtil.getPojo
-jsonUtil.getObject
-jsonUtil.getValue
-jsonUtil.getKeys
-jsonUtil.getArray
-jsonUtil.getObjFromArray
-```
-
-> <h4> Helper Class : <a href="/src/main/java/kmdv/Data/PropertiesUtil.java">PropertiesUtil</a></h4>
-
-```java
-String path = Path.fileFromProperties("sample.properties");
-PropertiesUtil propertiesUtil = new PropertiesUtil (path) ;
-```
-
-```java
-propertiesUtil.getValue
-propertiesUtil.getKeys
-propertiesUtil.getMAP
-```
-
-> <h4> Helper Class : <a href="/src/main/java/util/Data/TextUtil.java">TextUtil</a></h4>
-
-```java
-String path = Path.fileFromTextTestData("sample.txt");
-TextUtil textUtil = new TextUtil (path) ;
-```
-
-```java
-textUtil.readLines
-textUtil.writeLine
-```
-
+---
