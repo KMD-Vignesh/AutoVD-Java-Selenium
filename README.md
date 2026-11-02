@@ -14,7 +14,7 @@ Selenium WebDriver · TestNG · REST Assured · Page Objects · ExtentReports</p
 
 </div>
 
-<div>
+<div align="center">
 
 <h3>Author : Vignesh D</h3>
 
