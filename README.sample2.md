@@ -19,15 +19,16 @@ Selenium WebDriver · TestNG · REST Assured · Page Objects · ExtentReports</p
 
 </div>
 
-<div align="center">
+<div>
 
 <h3>Author : Vignesh D</h3>
 
 <p><strong>Senior Software Quality Analyst</strong><br>Chennai, India</p>
 
 <p>
+    <a href="https://github.com/KMD-Vignesh"><img src="https://img.shields.io/badge/GitHub-KMD--Vignesh-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
   <a href="https://www.linkedin.com/in/vigneshdhakshnamoorthy/"><img src="https://img.shields.io/badge/LinkedIn-Vignesh%20D-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-  <a href="https://github.com/KMD-Vignesh"><img src="https://img.shields.io/badge/GitHub-KMD--Vignesh-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+
 </p>
 
 <p>
@@ -37,6 +38,7 @@ Selenium WebDriver · TestNG · REST Assured · Page Objects · ExtentReports</p
 </p>
 
 </div>
+
 ## What It Is
 
 A Selenium + TestNG framework that keeps the boilerplate out of your tests. Extend `TestBase`, call `Selenium(url)` or `RestAPI(baseURI)`, and you get a thread-safe browser or API client, an Extent test, automatic screenshots, and an Excel result row when the method finishes.
