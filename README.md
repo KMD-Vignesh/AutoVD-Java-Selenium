@@ -14,21 +14,17 @@ Selenium WebDriver · TestNG · REST Assured · Page Objects · ExtentReports</p
 
 </div>
 
-<div align="center">
+<div>
 
-<h3>Vignesh D</h3>
+<h3>Author : Vignesh D</h3>
 
 <p><strong>Senior Software Quality Analyst</strong><br>Chennai, India</p>
 
 <p>
-  <a href="https://www.linkedin.com/in/kmd-vignesh/"><img src="https://img.shields.io/badge/LinkedIn-Vignesh%20D-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-  <a href="https://github.com/KMD-Vignesh"><img src="https://img.shields.io/badge/GitHub-KMD--Vignesh-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
-</p>
+    <a href="https://www.linkedin.com/in/kmd-vignesh/"><img src="https://img.shields.io/badge/LinkedIn-0A75AD?style=for-the-badge" alt="LinkedIn"></a>
+    <a href="https://github.com/KMD-Vignesh"><img src="https://img.shields.io/badge/GitHub-F0E0D0?style=for-the-badge" alt="GitHub"></a>
+    <a href="mailto:KMD.Vignesh@outlook.com"><img src="https://img.shields.io/badge/KMD.Vignesh@Outlook-FF6A80?style=for-the-badge" alt="Email"></a>
 
-<p>
-  <a href="mailto:KMD.Vignesh@outlook.com">KMD.Vignesh@outlook.com</a>
-  &nbsp;·&nbsp;
-  <a href="mailto:VigneshDhakshnamoorthy@gmail.com">VigneshDhakshnamoorthy@gmail.com</a>
 </p>
 
 </div>
@@ -50,9 +46,9 @@ Seven implementations of the same layered idea. Pick the stack your team already
 | :------------------------------ | :---------------------------- | :-------- | :------------------------------------------------------------------------------------------ |
 | **Java + Selenium** — this repo | Java 17 · Selenium 4 · TestNG | UI + REST | [AutoVD-Java-Selenium](https://github.com/KMD-Vignesh/AutoVD-Java-Selenium)                 |
 | **Java + Playwright**           | Java · Playwright · TestNG    | UI + REST | [AutoVD-Java-Playwright](https://github.com/KMD-Vignesh/AutoVD-Java-Playwright)             |
-| **C# + Playwright**             | C# · Playwright · NUnit       | UI        | [AutoVD-CS-Playwright](https://github.com/KMD-Vignesh/AutoVD-CS-Playwright)                 |
+| **C# + Playwright**             | C# · Playwright · NUnit       | UI + REST | [AutoVD-CS-Playwright](https://github.com/KMD-Vignesh/AutoVD-CS-Playwright)                 |
 | **Python + Selenium**           | Python · Selenium · pytest    | UI + REST | [AutoVD-Python-Selenium](https://github.com/KMD-Vignesh/AutoVD-Python-Selenium)             |
-| **Python + Playwright**         | Python · Playwright · pytest  | UI        | [AutoVD-Python-Playwright](https://github.com/KMD-Vignesh/AutoVD-Python-Playwright)         |
+| **Python + Playwright**         | Python · Playwright · pytest  | UI + REST | [AutoVD-Python-Playwright](https://github.com/KMD-Vignesh/AutoVD-Python-Playwright)         |
 | **TypeScript + Playwright**     | TypeScript · Playwright       | UI + REST | [AutoVD-Typescript-Playwright](https://github.com/KMD-Vignesh/AutoVD-Typescript-Playwright) |
 | **TypeScript + Cypress**        | TypeScript · Cypress          | UI (E2E)  | [AutoVD-Typescript-Cypress](https://github.com/KMD-Vignesh/AutoVD-Typescript-Cypress)       |
 
@@ -234,3 +230,5 @@ Reports are cleaned at suite start, so each run reflects only that run.
 ## License
 
 MIT. See [`LICENSE`](LICENSE).
+
+---
